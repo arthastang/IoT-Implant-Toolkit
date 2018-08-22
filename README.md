@@ -1,5 +1,5 @@
 # IoT-Implant-Toolkit
-A collect of useful tools for malware implantation research of IoT devices. 
+A framework of useful tools for malware implantation research of IoT devices. 
 
 ## Implant Toolkit
 A framework consisted of essential software tools for malware implantation research.
