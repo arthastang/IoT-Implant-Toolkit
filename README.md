@@ -4,7 +4,7 @@ A framework of useful tools for malware implantation research of IoT devices.
 ## Implant Toolkit
 A framework consisted of essential software tools for malware implantation research.
 
-Tools list:
+Tools/Plugins List:
 
 Topic | Tool | Description | Source
 :---------: | :---------:| :----------:| :----------:|
@@ -15,6 +15,46 @@ Firmware Pack&Unpack | mkbootimg_tools | Unpack&repack boot.img for Android | ht
 Software Analysis | setools-android | setools for Android with sepolicy-inject | https://github.com/xmikos/setools-android |
 Software Analysis | odex unpack | Odex to smali for Android | on our Github |
 Binary implant | spy client&server | a stable spy client and server, source and pre-built bins | on our Github |
+
+### How to use
+Download source code from our Github:
+```bash
+$ git clone https://github.com/arthastang/IoT-Implant-Toolkit.git
+
+```
+Set up environment and install dependencies:
+```bash
+$ cd IoT-Implant-Toolkit/
+$ python3 setup.py
+
+```
+Run the toolkit:
+```bash
+$ python3 IoT-Implant-Toolkit.py
+ _____   _______   _____                 _             _       _______          _ _    _ _   
+|_   _| |__   __| |_   _|               | |           | |     |__   __|        | | |  (_) |  
+  | |  ___ | |______| |  _ __ ___  _ __ | | __ _ _ __ | |_ ______| | ___   ___ | | | ___| |_ 
+  | | / _ \| |______| | | '_ ` _ \| '_ \| |/ _` | '_ \| __|______| |/ _ \ / _ \| | |/ / | __|
+ _| || (_) | |     _| |_| | | | | | |_) | | (_| | | | | |_       | | (_) | (_) | |   <| | |_ 
+|_____\___/|_|    |_____|_| |_| |_| .__/|_|\__,_|_| |_|\__|      |_|\___/ \___/|_|_|\_\_|\__|
+                                  | |                                                        
+                                  |_|                                                        
+            
+                                 IoT-Implant-Toolkit
+            -------------------------------------------------------------
+                      A Framework for IoT implantation research.
+
+                                   by Marvel Team
+
+            Command:
+            list - List all tools
+            run - Run a specific tool
+            exit - Exit
+
+                
+[Implant-Toolkit]>
+
+```
 
 
 ## Hardware tools
