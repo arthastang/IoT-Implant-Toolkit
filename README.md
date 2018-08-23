@@ -17,6 +17,9 @@ Software Analysis | odex unpack | Odex to smali for Android | on our Github |
 Binary implant | spy client&server | a stable spy client and server, source and pre-built bins | on our Github |
 
 ### How to use
+Make sure you have git, python3 and setuptools installed.
+
+
 Download source code from our Github:
 ```bash
 $ git clone https://github.com/arthastang/IoT-Implant-Toolkit.git
@@ -25,7 +28,7 @@ $ git clone https://github.com/arthastang/IoT-Implant-Toolkit.git
 Set up environment and install dependencies:
 ```bash
 $ cd IoT-Implant-Toolkit/
-$ python3 setup.py
+$ python3 setup.py install
 
 ```
 Run the toolkit:
