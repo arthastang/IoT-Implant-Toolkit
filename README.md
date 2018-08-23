@@ -15,6 +15,13 @@ Firmware Pack&Unpack | mkbootimg_tools | Unpack&repack boot.img for Android | ht
 Software Analysis | setools-android | setools for Android with sepolicy-inject | https://github.com/xmikos/setools-android |
 Software Analysis | odex unpack | Odex to smali for Android | on our Github |
 Binary implant | spy client&server | a stable spy client and server, source and pre-built bins | on our Github |
+Firmware Analysis | binwalk | a fast, easy to use tool for analyzing, reverse engineering, and extracting firmware images | https://github.com/ReFirmLabs/binwalk |
+Firmware Modify |firmware mod kit | a collection of scripts and utilities to extract and rebuild linux based firmware images | https://github.com/rampageX/firmware-mod-kit |
+Cross Compiler | buildroot | Cross Compiler for arm mips powerpc | https://buildroot.org/ |
+filesystem Analysis | cramfs-1.1 | make cramfs filesystem |  https://sourceforge.net/projects/cramfs/files/cramfs/1.1/ |
+
+
+
 
 ### How to use
 Make sure you have git, python3 and setuptools installed.
