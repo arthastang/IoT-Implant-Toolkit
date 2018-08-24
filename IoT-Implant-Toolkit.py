@@ -35,7 +35,7 @@ class ToolkitCli():
             exit - Exit
 
                 '''
-    tooltable = {'pyserial':['Serial port debugging','Modem control and terminal emulation program'], 'baudrate.py':['Serial port debugging','Find correct baudrate'], 'mksquashfs':['Firmware Pack&Unpack','Create and extract Squashfs filesystem']}
+    tooltable = {'pyserial':['Serial port debugging','Modem control and terminal emulation program'], 'baudrate.py':['Serial port debugging','Find correct baudrate'], 'MkSquashfs':['Firmware Pack&Unpack','Create and extract Squashfs filesystem']}
     cli = Cli(prompt="[Implant-Toolkit]>", intro=clibanner, toollist=tooltable)
     
     @classmethod

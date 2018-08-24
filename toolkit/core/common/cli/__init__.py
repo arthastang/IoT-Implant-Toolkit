@@ -2,7 +2,9 @@
 
 import argparse
 #import pyparsing
+import importlib
 from cmd2 import Cmd, with_argument_list
+from toolkit.plugins.firmware.mksquashfs import MkSquashfs
 
 
 class Cli(Cmd):
@@ -48,7 +50,19 @@ class Cli(Cmd):
 
         toolname, toolarg = self.runtool.parse_known_args(arglist)
 
-        print("Run plugin:{} with arguments:{}".format(toolname.pluginname, str(toolarg)))
+        pluginnam = toolname.pluginname
+
+        print("Run plugin:{} with arguments:{}".format(pluginnam, str(toolarg)))
+
+        if pluginnam in self.toollist.keys():
+            #print(pluginnam)
+            toolobj = globals()[pluginnam]
+            #print(toolobj)
+            toolinstance = toolobj()
+            toolinstance.run(toolarg)
+        else:
+            print("Plugin not found.")
+
         print()
 
 
