@@ -1,0 +1,8 @@
+Package: libext2fs
+Version: 1.42.12-1
+Depends: libc
+Source: package/utils/e2fsprogs
+Section: libs
+Architecture: sunxi
+Installed-Size: 124616
+Description:  libext2fs is a library which can access ext2, ext3 and ext4 filesystems.

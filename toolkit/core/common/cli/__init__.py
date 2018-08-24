@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
 import argparse
-#import pyparsing
-import importlib
+#import pkgutil
 from cmd2 import Cmd, with_argument_list
 from toolkit.plugins.firmware.mksquashfs import MkSquashfs
-
+from toolkit.plugins.firmware.unsquashfs import UnSquashfs
+from toolkit.plugins.firmware.mkbootimg import MkBootimg
+#from toolkit.core.common.toollist import ToolList
 
 class Cli(Cmd):
     '''
@@ -31,11 +32,11 @@ class Cli(Cmd):
         '''
         List the tools avaliable
         '''
-        print("{:<20} {:<30} {}".format("PLUGINS", "TOPIC", "DESCRIPTIONS"))
-        print("{:<20} {:<30} {}\n".format("*******", "*****", "************"))
+        print("{:<20} {:<30} {}".format("PLUGINS", "CATEGORY", "DESCRIPTIONS"))
+        print("{:<20} {:<30} {}\n".format("*******", "********", "************"))
 
         for eachtool in self.toollist:
-            print("{:<20} {:<30} {}".format(eachtool, self.toollist[eachtool][0], self.toollist[eachtool][1]))
+            print("{:<20} {:<30} {}".format(eachtool, self.toollist[eachtool][1], self.toollist[eachtool][2]))
         print()
 
     @with_argument_list
@@ -56,7 +57,8 @@ class Cli(Cmd):
 
         if pluginnam in self.toollist.keys():
             #print(pluginnam)
-            toolobj = globals()[pluginnam]
+            #get the class name from toollist dict
+            toolobj = globals()[self.toollist[pluginnam][0]]
             #print(toolobj)
             toolinstance = toolobj()
             toolinstance.run(toolarg)

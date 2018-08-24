@@ -1,0 +1,16 @@
+# This is a wrapper script which basically manipulates the boundaries of an already limited shebang.
+# This allows the execution of the real mkboot (aka wrapper) script using bash from the project directory whether it be on Linux or an ARM device.
+
+target=$(pwd)
+script="${target}/wrapper"
+shebang=$(head -1 "$script")
+buildit="$@"
+
+# Use an array in case a argument is there too
+interp=( ${shebang#\#!} )
+
+# Now run it, passing in the remaining command line arguments
+# EXAMPLE 1: Unpacking: ./mkboot recovery.img recoveryfolder
+# EXAMPLE 2: Packing: ./mkboot recoveryfolder recovery.img
+shift 1
+exec "${target}/${interp[@]}" "$script" ${buildit}

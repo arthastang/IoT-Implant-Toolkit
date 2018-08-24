@@ -1,0 +1,45 @@
+mount_ntfs() {
+    case "${DEVNAME}" in
+        sda*)
+            mkdir -p /mnt/exUDISK
+            /usr/bin/ntfs-3g /dev/${DEVNAME} /mnt/exUDISK -o rw,noatime,nodiratime,nosuid,nodev
+            exit
+            ;;
+        mmcblk*)
+            mkdir -p /mnt/SDCARD
+            /usr/bin/ntfs-3g /dev/${DEVNAME} /mnt/SDCARD -o rw,noatime,nodiratime,nosuid,nodev
+            exit
+            ;;
+        *)
+            ;;
+    esac
+}
+
+/sbin/block hotplug || {
+    if [ -n "${DEVNAME}" ] && [ "${ACTION}" = "add" ]; then
+        [ -f "/etc/config/fstab" ] && {
+            grep "option.*device.*${DEVNAME}" /etc/config/fstab &>/dev/null && {
+                if [ -x "/usr/bin/ntfs-3g" -a -x "/usr/bin/ntfs-3g.probe" ]; then
+                    /usr/bin/ntfs-3g.probe --readwrite /dev/${DEVNAME} &>/dev/null
+                    case $? in
+                        0)
+                            mount_ntfs
+                            ;;
+                        12)
+                            echo "${DEVNAME} doesn't have a NTFS filesystem"
+                            ;;
+                        16)
+                            echo "The volume is already exclusively opened and in use by a kernel driver or software."
+                            break;
+                            ;;
+                        *)
+                            echo "Something wrong on file system of ${DEVNAME}. Fixing. Please wait for a few seconds"
+                            [ -x "/usr/bin/ntfsfix" ] && /usr/bin/ntfsfix /dev/${DEVNAME}
+                            mount_ntfs
+                            ;;
+                    esac
+                fi
+            }
+        }
+    fi
+}

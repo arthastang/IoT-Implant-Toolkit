@@ -1,0 +1,11 @@
+Package: wpa-supplicant
+Version: 2016-01-15-2
+Depends: libc, libnl-tiny
+Conflicts: wpad, wpad-mini, wpad-mesh
+Source: package/network/services/hostapd
+License: BSD-3-Clause
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: sunxi
+Installed-Size: 306188
+Description:  WPA Supplicant

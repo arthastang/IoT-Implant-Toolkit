@@ -1,0 +1,13 @@
+Package: iperf
+Version: 2.0.5-1
+Depends: libc, libstdcpp
+Source: package/network/utils/iperf
+License: BSD-3-Clause
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: sunxi
+Installed-Size: 21591
+Description:  Iperf is a modern alternative for measuring TCP and UDP bandwidth
+ performance, allowing the tuning of various parameters and
+ characteristics.
+ This package is built with single thread support.

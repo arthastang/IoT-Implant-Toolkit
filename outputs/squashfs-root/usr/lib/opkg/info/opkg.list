@@ -1,0 +1,7 @@
+/etc/opkg/customfeeds.conf
+/lib/upgrade/keep.d/opkg
+/bin/opkg
+/etc/uci-defaults/20_migrate-feeds
+/usr/sbin/opkg-key
+/etc/opkg.conf
+/etc/opkg/distfeeds.conf

@@ -1,0 +1,9 @@
+force_wme_ac=1
+wme_ac_sta_be=aifsn 1 ecwmin 1 ecwmax 1 txop 0x5e
+tcpack_sup_mode=1
+frameburst=1
+txinrx_thres=128
+oob_enabled_later=1
+dhd_rxbound=128
+dhd_txbound=64
+nv_by_chip=2 43430 1 nv_43438a1.txt 43430 2 nv_43436p.txt

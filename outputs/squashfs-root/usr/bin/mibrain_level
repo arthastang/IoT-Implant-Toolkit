@@ -1,0 +1,23 @@
+#!/bin/sh
+
+conf="/data/mibrain/level"
+
+case "$1" in
+    "get")
+	if [ -f $conf ]; then
+	    level=`cat $conf`
+	else
+	    level="product"
+	fi
+	echo "{\"level\":\"$level\"}"
+	;;
+    preview|product)
+	echo "$1" > $conf
+	;;
+    list)
+	echo "{\"level\":[\"preview\",\"product\"]}"
+	;;
+    *)
+	echo "set_mibrain_level [preview|product|get|list]"
+	;;
+esac

@@ -1,0 +1,11 @@
+Package: libgcc
+Version: -1
+Source: package/libs/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: sunxi
+Installed-Size: 17188
+Description:  GCC support library

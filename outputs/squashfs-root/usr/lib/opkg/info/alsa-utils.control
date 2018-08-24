@@ -1,0 +1,9 @@
+Package: alsa-utils
+Version: 1.1.0-1
+Depends: libc, alsa-lib, libncurses, libpthread, libncursesw
+Source: package/utils/alsa-utils
+Section: utils
+Maintainer: Ted Hess <thess@kitschensync.net>
+Architecture: sunxi
+Installed-Size: 118690
+Description:  ALSA (Advanced Linux Sound Architecture) utilities

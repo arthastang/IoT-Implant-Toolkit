@@ -1,0 +1,8 @@
+Package: mibt
+Version: 0.0.1
+Depends: libc, libubox, libubus, libblobmsg-json, librt, libpthread, libjson-c, alsa-lib, libubus
+Source: /home/jenkins/mico/mi/mibt
+Section: xiaomi
+Architecture: sunxi
+Installed-Size: 1054354
+Description:  Xiaomi bluetooth software

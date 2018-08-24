@@ -1,0 +1,16 @@
+#!/bin/sh
+
+ubus -t 10 call mediaplayer test
+ret=$?
+if [ $ret != 0 ]
+then
+	logger -s -p 3 -t "stat_points_none" "mediaplayer : ubus failed code : $ret"
+	/etc/init.d/mediaplayer.init restart
+fi
+
+play_status=`ubus call mediaplayer player_get_play_status | grep status | awk -F "," '{print $1}' | awk '{print $4}'`
+mem_free=`free | grep Mem | awk '{print $4}'`
+if [ $play_status -eq 0 ] && [ $mem_free -lt 5000 ]; then
+    logger -s -p 3 -t "mediaplayer" "restart, when play_status:$play_status and mem_free:$mem_free"
+    /etc/init.d/mediaplayer.init restart
+fi

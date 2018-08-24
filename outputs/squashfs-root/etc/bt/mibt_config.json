@@ -1,0 +1,12 @@
+{
+    "device": {
+        "enable": "1",
+        "discoverable": "1",
+        "connectable": "1",
+        "bd_name": "小爱音箱-0001",
+        "bd_addr": "8C:BE:BE:01:00:01",
+        "class_of_device": "00:04:28",
+	"countrycode": "0",
+	"misc": "0"
+    }
+}

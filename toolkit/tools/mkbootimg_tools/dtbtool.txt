@@ -1,0 +1,236 @@
+Copyright (c) 2012-2014, The Linux Foundation. All rights reserved.
+
+Redistribution and use in source form and compiled forms (SGML, HTML,
+PDF, PostScript, RTF and so forth) with or without modification, are
+permitted provided that the following conditions are met:
+
+Redistributions in source form must retain the above copyright
+notice, this list of conditions and the following disclaimer as the
+first lines of this file unmodified.
+
+Redistributions in compiled form (transformed to other DTDs,
+converted to PDF, PostScript, RTF and other formats) must reproduce
+the above copyright notice, this list of conditions and the following
+disclaimer in the documentation and/or other materials provided with
+the distribution.
+
+THIS DOCUMENTATION IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE AND
+NON-INFRINGEMENT ARE DISCLAIMED. IN NO EVENT SHALL THE FREEBSD
+DOCUMENTATION PROJECT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+
+Android - Table of Device Tree
+==============================
+
+0) Document revision
+   v1.0 - Initial version (dng)
+   v1.1 - Add v2 format to allow subtype (dng)
+
+1) Android boot image:
+----------------------
+1.1) Header:
+   1) Magic (8B)
+   2) kernel size (4B)
+   3) kernel addr (4B)
+   4) ramdisk size (4B)
+   5) ramdisk addr (4B)
+   6) 2ndary size (4B)
+   7) 2ndary addr (4B)
+   8) tags addr (4B)
+   9) page size (4B)
+  10) unused #1 (4B) (zero in standard Android)
+  11) unused #2 (4B) (zero in standard Android)
+  12) product name (16B)
+  13) kernel cmdline (512B)
+  14) id (8B)
+
+1.2) Layout:
+   A) header (as above - 1 page)
+   B) kernel (n pages)
+   C) ramdisk (m pages)
+   D) second stage (o pages)
+
+2) QC table of device tree
+--------------------------
+2.1) Changes:
+   i) use "unused #1, #2" members in existing boot image
+      header to point to new table of device tree
+      (#1 - size of QC table of DT)
+  ii) append table of device tree (described later)
+      after "D) second stage"
+
+2.2) Format:
+                                 size
+   x      +------------------+
+   |      | MAGIC ("QCDT")   |   4B
+   |      +------------------+
+ header   | VERSION          |   uint32 (version 3)
+   |      +------------------+
+   |      | num of DTBs      |   uint32 (number of DTB entries)
+   x      +------------------+
+   |      | platform id #1   |   uint32 (e.g. ID for MSM8974)
+   |      +------------------+
+   |      | variant id #1    |   uint32 (e.g. ID for CDP, MTP)
+   |      +------------------+
+   |      | subtype id #1    |   uint32 (e.g. ID for subtype) (QCDT v2)
+ device   +------------------+
+  #1      | soc rev #1       |   uint32 (e.g. MSM8974 v2)
+ entry    +------------------+
+   |      | pmic0 #1         |   uint32 (pmic0-> first smallest SID of existing pmic)
+   |      +------------------+
+   |      | pmic1 #1         |   uint32 (pmic1-> secondary smallest SID of existing pmic)
+   |      +------------------+
+   |      | pmic2 #1         |   uint32 (pmic2-> third smallest SID of existing pmic)
+   |      +------------------+
+   |      | pmic3 #1         |   uint32 (pmic3-> fourth smallest SID of existing pmic)
+   |      +------------------+
+   |      | offset #1        |   uint32 (byte offset from start/before MAGIC
+   |      +------------------+           to DTB entry)
+   |      | size #1          |   uint32 (size in bytes of DTB blob)
+   x      +------------------+
+   .              .
+   .              .  (repeat)
+   .              .
+
+   x      +------------------+
+   |      | platform id #Z   |   uint32 (e.g. ID for MSM8974)
+   |      +------------------+
+  device  | variant id #Z    |   uint32 (e.g. ID for CDP, MTP)
+  #Z      +------------------+
+  entry   | subtype id #Z    |   uint32 (e.g. ID for subtype) (QCDT v2)
+  (last)  +------------------+
+   |      | soc rev #Z       |   uint32 (e.g. MSM8974 v2)
+   |      +------------------+
+   |      | pmic0 #1         |   uint32 (pmic0-> first smallest SID of existing pmic)
+   |      +------------------+
+   |      | pmic1 #1         |   uint32 (pmic1-> secondary smallest SID of existing pmic)
+   |      +------------------+
+   |      | pmic2 #1         |   uint32 (pmic2-> third smallest SID of existing pmic)
+   |      +------------------+
+   |      | pmic3 #1         |   uint32 (pmic3-> fourth smallest SID of existing pmic)
+   |      +------------------+
+   |      | offset #Z        |   uint32 (byte offset from start/before MAGIC
+   x      +------------------+           to DTB entry)
+          | 0 ("zero")       |   uint32 (end of list delimiter)
+          +------------------+           to DTB entry)
+          | padding          |   variable length for next DTB to start on
+          +------------------+           page boundary
+          | DTB #1           |   variable (start is page aligned)
+          |                  |
+          |                  |
+          +------------------+
+          | padding          |   variable length for next DTB to start on
+          +------------------+           page boundary
+                  .
+                  .
+                  .
+
+          +------------------+
+          | DTB #Z (last)    |   variable (start is page aligned)
+          |                  |
+          |                  |
+          +------------------+
+
+3) Operations
+-------------
+3.1) Build-time:
+  1) Each DTS per device will add a "qcom,msm-id" entry
+     e.g. for msm8974-sim.dts, add
+            qcom,msm-id = <x y z>;
+          or
+            qcom,msm-id = <x z>;
+            qcom,board-id = <y y'>;
+          or
+            qcom,msm-id = <x z>;
+            qcom,board-id = <y y'>;
+            qcom,pmic-id = <a b c d>;
+     x  = ID for msm8974
+     y  = ID for CDP, MTP, etc.
+     y' = ID for subtype (assumed zero if absent)
+     z  = ID for soc revision
+     a = pmic0
+     b = pmic1
+     c = pmic2
+     d = pmic3
+     SBL populates the pmic entries always in ascending order of SID, so
+     pmic0-> SID0, pmic1-> SID1, pmic2-> SID2, pmic3-> SID3.
+     e.g. for qcom,pmic-id = <pmic0 pmic1 pmic2 pmic3>
+      Board X = MSM8994 + PM8994 + PMI8994            (Existing boards [ROW])
+      Board Y = MSM8994 + PM8994 + PMI8994 + PM8004   (Internal SS board variant)
+      Board Z = MSM8994 + PM8994 + PM8004             (Boards that SS will be making)
+
+    For all boards X, Y, and Z, PMICs have the following SIDs and REVID SUBTYPEs
+    (i.e. PMIC Model):
+      PM8994 -            SID 0 and 1; subtype = 9
+      PMI8994 -           SID 2 and 3; subtype = 10
+      PM8004 -            SID 4 and 5; subtype = 12
+
+    LK using SMEM PMIC info(1 as major and 0 as minor version for example):
+      Board X: qcom,pmic-id = <0x0109 0x010A  0x0 0x0>;
+      Board Y: qcom,pmic-id = <0x0109 0x010A 0x010C 0x0>;
+      Board Z: qcom,pmic-id = <0x0109 0x010C 0x0 0x0>;
+
+     The entry can optionally be an array:
+         qcom,msm-id = <x1 y1 z1>, <x2 y2 z2>, ...;
+       or
+         qcom,msm-id = <x1 z1>, <x2 z2>, ...;
+         qcom,board-id = <y1 y1'>, ...;
+        or
+         qcom,msm-id = <x1 z1>, <x2 z2>, ...;
+         qcom,board-id = <y1 y1'>, ...;
+         qcom,pmic-id = <a1 b1 c1 d1>, ...;
+     Note that qcom,msm-id, qcom,board-id and qcom,pmic-id are not matched pairs.
+  2) Kernel compile will generate the DTB
+  3) Android build will run a new tool (dtbTool)
+     a) scan the DTB output directory for all compiled DTB
+     b) decompile the DTB for "qcom,msm-id"/"qcom,board-id"/"qcom,pmic-id"
+     c) generate the QC table of device tree in sorted
+        order (platform, variant, subtype, soc rev, pmic0, pmic1, pmic2, pmic3)
+     d) modified mkbootimg will merge new table of DT
+
+3.2) Run-time:
+  1) LK bootloader will obtain platform id/variant/subtype/soc rev/major ver/minor ver
+     /pmic0/pmic1/pmic2/pmic3 info either from early bootloaders or via other means
+  2) LK bootloader will check entries #10 for non-zero
+     value (set to zero for standard boot.img).  If the
+     value is non-zero, refer to page section after
+     the "second stage" in the boot.img layout
+  3) Check QCDT magic
+  4) Check QCDT version (optional LK to handle multiple
+     QCDT version)
+  5) LK scans through the QCDT table to look for matching
+     entry.  Search order is:
+     1) msm ID exact match
+     2) Platform type exact match
+     3) subtype ID exact match
+     4) HLOS subtype exact match
+     5) Pmic0 model ID exact match
+     6) Pmic1 model ID exact match
+     7) Pmic2 model ID exact match
+     8) Pmic3 model ID exact match
+     9) foundry ID, look for exact match, if not found choose
+    device tree with foundry-id(0x0)
+     10) select the highest soc rev in QCDT that is
+        equal to or lower than the runtime detected soc rev
+     11) select the highest major&minor ver in QCDT that is
+        equal to or lower than the runtime detected major ver
+     12) select the highest pmic0 major&minor in QCDT that is
+        equal to or lower than the runtime detected pmic0
+     13) select the highest pmic1 major&minor in QCDT that is
+        equal to or lower than the runtime detected pmic1
+     14) select the highest pmic2 major&minor in QCDT that is
+        equal to or lower than the runtime detected pmic2
+     15) select the highest pmic3 major&minor in QCDT that is
+        equal to or lower than the runtime detected pmic3
+  6) Load the matching DTB blob to the tags addr
+  7) LK pass the correct DTB to the kernel
+  

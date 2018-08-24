@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ubus call mibrain text_to_speech "{\"text\":\"$*\",\"save\":1}"

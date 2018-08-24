@@ -1,0 +1,10 @@
+Package: wpa-cli
+Version: 2016-01-15-2
+Depends: libc
+Source: package/network/services/hostapd
+License: BSD-3-Clause
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: sunxi
+Installed-Size: 30220
+Description:  WPA Supplicant command line interface

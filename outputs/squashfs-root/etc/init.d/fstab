@@ -1,0 +1,15 @@
+#!/bin/sh /etc/rc.common
+# (C) 2013 openwrt.org
+
+START=40
+DEPEND=boot
+
+start() {                            
+	echo "this file has been obsoleted. please call \"/sbin/block mount\" directly"
+	/sbin/block mount
+}
+
+stop() {                            
+	echo "this file has been obsoleted. please call \"/sbin/block umount\" directly"
+	/sbin/block umount
+}

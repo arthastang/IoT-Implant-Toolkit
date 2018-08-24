@@ -1,0 +1,8 @@
+/usr/bin/miio_service
+/usr/bin/miio_set_uid
+/usr/bin/miio_send_line
+/etc/init.d/miio
+/etc/miio/device.conf
+/usr/bin/miio_client
+/usr/bin/miio_recv_line
+/usr/bin/miio_client_helper

@@ -1,0 +1,911 @@
+Package: syslog-ng
+Version: 3.0.5-5
+Depends: libc, libpcre, glib2, libeventlog, libopenssl, libpthread, librt, zlib, libdbi
+Status: install user installed
+Architecture: sunxi
+Conffiles:
+ /etc/syslog-ng.conf 0984e17ceca55e4f7ef08518b90e444d26
+Installed-Time: 1523254167
+
+Package: terminfo
+Version: 5.9-3
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: alsa-plugins
+Version: 1.1.1-2
+Depends: libc, alsa-lib, libpthread, libspeexdsp
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+
+Package: libc
+Version: -1
+Depends: libgcc
+Status: install hold installed
+Essential: yes
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: opkg
+Version: 9c97d5ecd795709c8584e972bfdf3aee3a5b846d-10
+Depends: libc, uclient-fetch
+Status: install user installed
+Architecture: sunxi
+Conffiles:
+ /etc/opkg.conf 26a52078154f218f09fd06901c7da77d64
+ /etc/opkg/customfeeds.conf 61d1f3aa62fe977614ed0c2f0ad3b2ee2f
+Installed-Time: 1523254167
+
+Package: iperf
+Version: 2.0.5-1
+Depends: libc, libstdcpp
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: wget
+Version: 1.17.1-1
+Depends: libc, libpcre, libopenssl, librt
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+Auto-Installed: yes
+
+Package: libopus
+Version: 1.1.3-2
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: libpthread
+Version: -1
+Depends: libgcc
+Status: install hold installed
+Essential: yes
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: ubus
+Version: 2016-01-26-619f3a160de4f417226b69039538882787b3811c
+Depends: libc, libubus, libblobmsg-json, ubusd
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: alsa-lib
+Version: 1.1.0-1
+Depends: libc, kmod-sound-core, libpthread, librt, libopus
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+
+Package: busybox
+Version: 1.24.1-2
+Depends: libc
+Status: install user installed
+Essential: yes
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: mibrain-vendor-sdk
+Version: 0.0.1
+Depends: libc, mibrain, mibrain-service, libjson-c, libubus, libblobmsg-json, libubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+
+Package: libatomic
+Version: -1
+Depends: libgcc
+Status: install hold installed
+Essential: yes
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: ap6212-firmware
+Version: 1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: xiaoqiang-util
+Version: 1-1.1
+Depends: libc, libopenssl
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: glib2
+Version: 2.55.0-1
+Depends: libc, zlib, libpthread, libffi, libattr
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: libdbus
+Version: 1.10.4-1
+Depends: libc, libpthread
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: quickplayer
+Version: 0.0.1
+Depends: libc, libubox, libubus, alsa-lib, libsndfile
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: mibt
+Version: 0.0.1
+Depends: libc, libubox, libubus, libblobmsg-json, librt, libpthread, libjson-c, alsa-lib, libubus
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+
+Package: libcurl
+Version: 7.54.0-1
+Depends: libc, libopenssl, libnghttp2
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: mibrain
+Version: 1
+Depends: libc, libpthread, libstdcpp, libpolarssl, libjson-c
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+Auto-Installed: yes
+
+Package: adb
+Version: 0.0.1-1
+Depends: libc, liballwinner-base
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+
+Package: base-files
+Version: 167-1523253298
+Depends: libc, netifd, procd, jsonfilter, fstools
+Status: install user installed
+Architecture: sunxi
+Conffiles:
+ /etc/config/system 95f56cef889e11a48f16d6977a6369f8d7
+ /etc/hosts 081ef9d5367595d16e30b4b4549d9f4353
+ /etc/inittab f3d1d58ca2a9ef33a56d668d9693231ec4
+ /etc/group 35b63adf31591ac37358e918a5e8d4f9c1
+ /etc/passwd 6a451aa33393f47ade89b8bce4d9711818
+ /etc/shadow 81cbbae0b8285ae075ad50613355d160b2
+ /etc/profile 89aa168d9a8b9dd05f0a153939e71cf2b4
+ /etc/protocols 7d551355d5540b07b9d86e623cbbc4abec
+ /etc/services 47f3393d265c8cefc2d1ec72f8b0b02cde
+ /etc/shells 8b35ce73c18161a7d7ed16fa244410993b
+ /etc/sysctl.conf 427dedc19aa6bfb2e9d5c59d9aa0af8445
+ /etc/rc.local 7fefe0b8a4b87a54274260842ff85fc239
+ /etc/sysupgrade.conf 9e87b05fe2f12c84d1c465b39632274847
+ /etc/config/fstab 523007b333005d874d765020072b30cdac
+ /etc/config/system 95f56cef889e11a48f16d6977a6369f8d7
+ /etc/config/bluetooth a45a6a19a6279dd0d99d597e1654fce26e
+ /etc/crontabs/root 1039d3dc9b587e14a1e9518e408f917f9d
+ /etc/sysctl.d/local.conf 43cedc0217825c00cb1a3d49e7be43c06f
+ /etc/sysctl.d/local.conf 43cedc0217825c00cb1a3d49e7be43c06f
+ /etc/iproute2/rt_tables f771e2b81741f70e3faf658dc504f0dc04
+Installed-Time: 1523254164
+
+Package: libnghttp2
+Version: 1.22.0
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: kmod-input-core
+Version: 3.4.39-1
+Depends: kernel (= 3.4.39-1-304466b3610d25173dd3539a0f47a7e0)
+Status: install hold installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: libpcre
+Version: 8.38-2
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: liballwinner-base
+Version: 1-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: libconfig
+Version: 1.4.9-2
+Depends: libc, libstdcpp
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: netifd
+Version: 2016-02-01-3610a24b218974bdf2d2f709a8af9e4a990c47bd
+Depends: libc, libuci, libnl-tiny, libubus, ubus, ubusd, jshn, libubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: libgupnp
+Version: 1.0.2-1
+Depends: libc, libgssdp, libuuid
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: libnettle
+Version: 3.1.1-1
+Depends: libc, libgmp
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+Auto-Installed: yes
+
+Package: dnsmasq
+Version: 2.78-5
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Conffiles:
+ /etc/config/dhcp e68ecd0075557cd0cc39fc7eefe0fce3c8
+ /etc/dnsmasq.conf f1c7bb65d63337f8ed5f3d8ac0de8c4165
+Installed-Time: 1523254164
+
+Package: procd
+Version: 2016-02-08-57fe34225206c572b5e049826505f738191e4db5
+Depends: libc, ubusd, ubus, libjson-script, ubox, libubox, libubus
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: ubusd
+Version: 2016-01-26-619f3a160de4f417226b69039538882787b3811c
+Depends: libc, libubox, libblobmsg-json
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: memtester
+Version: 4.1.3-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+
+Package: mico-miio
+Version: 0.0.1
+Depends: libc, libjson-c, libubus, libblobmsg-json, libubox, libuci
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+
+Package: block-mount
+Version: 2016-01-10-96415afecef35766332067f4205ef3b2c7561d21
+Depends: libc, ubox, libubox, libuci
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: mipns-helper
+Version: 0.0.1
+Depends: libc, mibrain, libjson-c, libubus, libblobmsg-json, libubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+
+Package: libxml2
+Version: 2.9.3-1
+Depends: libc, libpthread, zlib
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+Auto-Installed: yes
+
+Package: libsoup
+Version: 2.54.1-2
+Depends: libc, glib2, libxml2, libgnutls, libsqlite3, intltool
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+Auto-Installed: yes
+
+Package: getevent
+Version: 1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: sqlite3-cli
+Version: 3120200-1
+Depends: libc, libsqlite3, libncurses, libreadline
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+Auto-Installed: yes
+
+Package: libgnutls
+Version: 3.4.11-1
+Depends: libc, libnettle, libgmp
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: libuci
+Version: 2016-02-02.1-1
+Depends: libc, libubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: liblua
+Version: 5.1.5-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: libip4tc
+Version: 1.4.21-2
+Depends: libc, libxtables
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+Auto-Installed: yes
+
+Package: mtd-utils
+Version: 1.5.2-2
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+Auto-Installed: yes
+
+Package: fstools
+Version: 2016-01-10-96415afecef35766332067f4205ef3b2c7561d21
+Depends: libc, ubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: uclient-fetch
+Version: 2016-01-28-2e0918c7e0612449024caaaa8d44fb2d7a33f5f3
+Depends: libc, libuclient
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+Auto-Installed: yes
+
+Package: libuclient
+Version: 2016-01-28-2e0918c7e0612449024caaaa8d44fb2d7a33f5f3
+Depends: libc, libubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: alarm
+Version: 0.0.1
+Depends: libc, libjson-c, libubus, libblobmsg-json, libubox, libuci, libuuid, libsqlite3
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+
+Package: uci
+Version: 2016-02-02.1-1
+Depends: libc, libuci
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: mtd-utils-mkfs.jffs2
+Version: 1.5.2-2
+Depends: libc, mtd-utils, zlib
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: dropbear
+Version: 2015.71-2
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Conffiles:
+ /etc/dropbear/dropbear_rsa_host_key e3b0c44298fc1c149afbf4c8996fb92427
+ /etc/config/dropbear 7013d75608bd9d715c1f400d38d3eb28a6
+Installed-Time: 1523254164
+
+Package: curl
+Version: 7.54.0-1
+Depends: libc, libcurl
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: libstdcpp
+Version: -1
+Status: install hold installed
+Essential: yes
+Architecture: sunxi
+Installed-Time: 1523254165
+Auto-Installed: yes
+
+Package: mtd
+Version: 21
+Depends: libc, libubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: wpa-supplicant
+Version: 2016-01-15-2
+Depends: libc, libnl-tiny
+Conflicts: wpad, wpad-mini, wpad-mesh
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: libjson-c
+Version: 0.12-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: libgcc
+Version: -1
+Status: install hold installed
+Essential: yes
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: libreadline
+Version: 6.3-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: nano-httpd
+Version: 0.0.1
+Depends: libc, libubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: libffi
+Version: 3.0.13-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: mediaplayer
+Version: 0.0.1
+Depends: libc, libstdcpp, librt, libcurl, libjson-c, libconfig, libsqlite3, libuuid, libubus, libblobmsg-json, libpolarssl, mico-misc, alsa-lib, zlib, libpthread, libopenssl
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+
+Package: libuuid
+Version: 2.25.2-4
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: mipns-general
+Version: 1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+
+Package: libubox
+Version: 2016-02-26-5326ce1046425154ab715387949728cfb09f4083
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: kmod-sound-core
+Version: 3.4.39-1
+Depends: kernel (= 3.4.39-1-304466b3610d25173dd3539a0f47a7e0), kmod-input-core
+Status: install hold installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: libspeexdsp
+Version: 1.2rc1-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: upnp-disc
+Version: 1
+Depends: libc, glib2, libubox, libubus, libjson-c, libgssdp, libgupnp, libcurl
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: librt
+Version: -1
+Depends: libpthread
+Status: install hold installed
+Essential: yes
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: libjson-script
+Version: 2016-02-26-5326ce1046425154ab715387949728cfb09f4083
+Depends: libc, libubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: libblobmsg-json
+Version: 2016-02-26-5326ce1046425154ab715387949728cfb09f4083
+Depends: libc, libjson-c, libubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: iptables
+Version: 1.4.21-2
+Depends: libc, kmod-ipt-core, libip4tc, libxtables
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: libsndfile
+Version: 1.0.25-2
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: mico-misc
+Version: 0.1.1-1
+Depends: libc, libuci, libjson-c, libpolarssl, htpdate, libcurl, liblua, libubox, libubus, alsa-lib
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+Auto-Installed: yes
+
+Package: jshn
+Version: 2016-02-26-5326ce1046425154ab715387949728cfb09f4083
+Depends: libc, libjson-c, libubox, libblobmsg-json
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: libncurses
+Version: 5.9-3
+Depends: libc, terminfo
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: kmod-ipt-core
+Version: 3.4.39-1
+Depends: kernel (= 3.4.39-1-304466b3610d25173dd3539a0f47a7e0), kmod-nf-ipt
+Status: install hold installed
+Architecture: sunxi
+Installed-Time: 1523254165
+Auto-Installed: yes
+
+Package: e2fsprogs
+Version: 1.42.12-1
+Depends: libc, libuuid, libext2fs
+Status: install user installed
+Architecture: sunxi
+Conffiles:
+ /etc/e2fsck.conf dece11e2b15f487d7d2bf9f96abe2eaaf9
+Installed-Time: 1523254164
+
+Package: libpolarssl
+Version: 1.3.16-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: ca-certificates
+Version: 20160104
+Depends: libc
+Status: install user installed
+Architecture: all
+Installed-Time: 1523254164
+
+Package: cpu_monitor
+Version: 1-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: misc-upgrade
+Version: 0.0.1-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: wpa-cli
+Version: 2016-01-15-2
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: hostapd
+Version: 2016-01-15-2
+Depends: libc, libnl-tiny, hostapd-common, libubus
+Conflicts: wpad, wpad-mini, wpad-mesh
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: libubus
+Version: 2016-01-26-619f3a160de4f417226b69039538882787b3811c
+Depends: libc, libubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: libeventlog
+Version: 0.2.9-2
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: iozone3
+Version: 444-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: libxtables
+Version: 1.4.21-2
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+Auto-Installed: yes
+
+Package: htpdate
+Version: 1.0.4-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: messagingagent
+Version: 1-1.1
+Depends: libc, zlib, libcurl, libstdcpp, libpthread, librt, libsqlite3, libuuid, libubus, libubox, libblobmsg-json, libjson-c, libpolarssl, libopenssl, libsqlite3, sqlite3-cli, wget, mibrain, rapidjson, libuci
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+
+Package: zlib
+Version: 1.2.8-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: libncursesw
+Version: 5.9-3
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: mipns-sai
+Version: 1
+Depends: libc, mipns-general, mibrain, mibrain-vendor-sdk, mibrain-service, glib2, alsa-lib, libubox, libubus, libjson-c
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: libmieqdrc
+Version: 0.0.1-1
+Depends: libc, alsa-lib
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: mitv-agent
+Version: 0.0.1
+Depends: libc, libjson-c, libubus, libblobmsg-json, libubox, libcurl, libpolarssl
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: fbtest
+Version: 1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: ota-burnboot
+Version: 0.1-0.1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: rapidjson
+Version: 1.1.0-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+Auto-Installed: yes
+
+Package: libgmp
+Version: 6.1.0-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: libsqlite3
+Version: 3120200-1
+Depends: libc, libpthread
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: kmod-net-ap6212
+Version: 3.4.39-1
+Depends: kernel (= 3.4.39-1-304466b3610d25173dd3539a0f47a7e0), ap6212-firmware
+Status: install hold installed
+Architecture: sunxi
+Installed-Time: 1523254167
+
+Package: libext2fs
+Version: 1.42.12-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: libexpat
+Version: 2.1.0-3
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: ubox
+Version: 2016-03-07-fd4bb41ee7ab136d25609c2a917beea5d52b723b
+Depends: libc, libubox, ubusd, ubus, libubus, libuci
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: mibrain-service
+Version: 0.0.1
+Depends: libc, mibrain, libjson-c, libubus, libblobmsg-json, libubox
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254166
+
+Package: kernel
+Version: 3.4.39-1-304466b3610d25173dd3539a0f47a7e0
+Depends: libc
+Status: install hold installed
+Architecture: sunxi
+Installed-Time: 1523254163
+Auto-Installed: yes
+
+Package: libnl-tiny
+Version: 0.1-5
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: alsa-utils
+Version: 1.1.0-1
+Depends: libc, alsa-lib, libncurses, libpthread, libncursesw
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: libgssdp
+Version: 1.0.2-1
+Depends: libc, libsoup, glib2
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254165
+
+Package: jsonfilter
+Version: 2014-06-19-cdc760c58077f44fc40adbbe41e1556a67c1b9a9
+Depends: libc, libubox, libjson-c
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: hostapd-common
+Version: 2016-01-15-2
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+
+Package: libattr
+Version: 20150922-1
+Depends: libc
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: libopenssl
+Version: 1.0.2h-1
+Depends: libc, zlib
+Status: install user installed
+Architecture: sunxi
+Installed-Time: 1523254164
+Auto-Installed: yes
+
+Package: kmod-touchscreen-gt82x
+Version: 3.4.39-1
+Depends: kernel (= 3.4.39-1-304466b3610d25173dd3539a0f47a7e0), kmod-input-core
+Status: install hold installed
+Architecture: sunxi
+Installed-Time: 1523254167
+

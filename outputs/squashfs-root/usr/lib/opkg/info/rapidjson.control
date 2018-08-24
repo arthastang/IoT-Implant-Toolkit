@@ -1,0 +1,8 @@
+Package: rapidjson
+Version: 1.1.0-1
+Depends: libc
+Source: /home/jenkins/mico/mi/rapidjson
+Section: opt
+Architecture: sunxi
+Installed-Size: 190
+Description:  rapidjson

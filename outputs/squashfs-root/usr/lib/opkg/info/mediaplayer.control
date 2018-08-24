@@ -1,0 +1,8 @@
+Package: mediaplayer
+Version: 0.0.1
+Depends: libc, libstdcpp, librt, libcurl, libjson-c, libconfig, libsqlite3, libuuid, libubus, libblobmsg-json, libpolarssl, mico-misc, alsa-lib, zlib, libpthread, libopenssl
+Source: /home/jenkins/mico/mi/player
+Section: xiaomi
+Architecture: sunxi
+Installed-Size: 1832219
+Description:  media player

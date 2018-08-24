@@ -1,0 +1,12 @@
+/usr/sbin/mkfs.ext2
+/usr/sbin/mkfs.ext3
+/usr/sbin/mkfs.ext4
+/usr/lib/libe2p.so.2
+/lib/functions/fsck/e2fsck.sh
+/usr/sbin/fsck.ext2
+/usr/sbin/fsck.ext3
+/usr/sbin/fsck.ext4
+/usr/sbin/e2fsck
+/etc/e2fsck.conf
+/usr/sbin/mke2fs
+/usr/lib/libe2p.so.2.3

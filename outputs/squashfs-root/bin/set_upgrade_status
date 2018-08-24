@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ -z "$1" ]
+then
+    echo "set_upgrade_status [status]"
+    return 1
+fi
+
+logger -t ota -p warn 'set upgrade status to '$1
+mkdir -p /data/status
+echo $1 > "/data/status/ota"
+sync
+matool_set_device_status u $1

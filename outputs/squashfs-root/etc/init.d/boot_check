@@ -1,0 +1,29 @@
+#!/bin/sh /etc/rc.common
+
+START=50
+
+is_factory="1"
+
+if [ $is_factory = "1" ]; then
+    echo 'factory mode...'
+else
+    echo 'normal boot...'
+fi
+
+mkdir -p /data/etc/
+if [ ! -f /data/etc/binfo ]; then
+	sn=`/sbin/imiflash get sn`
+	mac_wifi=`/sbin/imiflash get mac`
+	mac_bt=`/sbin/imiflash get bt`
+	miio_did=`/sbin/imiflash get did`
+	miio_key=`/sbin/imiflash get key`
+	echo 'config binfo "binfo"' > /data/etc/binfo
+	uci -c /data/etc -q batch <<EOF
+	set binfo.binfo.sn=$sn
+	set binfo.binfo.mac_wifi=$mac_wifi
+	set binfo.binfo.mac_bt=$mac_bt
+	set binfo.binfo.miio_did=$miio_did
+	set binfo.binfo.miio_key=$miio_key
+	commit binfo
+EOF
+fi

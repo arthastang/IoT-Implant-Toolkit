@@ -1,0 +1,27 @@
+CORP midot
+MicType 0
+MIC_RADIUS 0.035
+NFFT   512
+In_len      256     #
+Fs 16000
+mic_num 4
+speaker_num 1
+doa_once false
+doa_result -1
+amplify 8
+wakeupth 0.3 
+wakeupmode  1234
+VAD_amplify 20
+
+#
+AEC_ON 1
+WAKEUP_DENOISE_ON 1
+DEREVERB_ON 1
+ADAPTIVEBEAM_ON 1
+MONOEN_ON 1
+AGC_ON 1
+AECPOST_ON 1
+#
+BOARD 8
+SAMPLE 1024
+LED_ON  0

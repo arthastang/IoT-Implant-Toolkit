@@ -1,0 +1,9 @@
+Package: e2fsprogs
+Version: 1.42.12-1
+Depends: libc, libuuid, libext2fs
+Source: package/utils/e2fsprogs
+Section: utils
+Architecture: sunxi
+Installed-Size: 185665
+Description:  This package contains essential ext2 filesystem utilities which consists of
+ e2fsck, mke2fs and most of the other core ext2 filesystem utilities.

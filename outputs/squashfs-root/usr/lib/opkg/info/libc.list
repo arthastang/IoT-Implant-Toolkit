@@ -1,0 +1,3 @@
+/lib/libc.so
+/lib/ld-musl-armhf.so.1
+/usr/bin/ldd

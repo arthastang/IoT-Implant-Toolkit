@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "1" > /tmp/ssh_en
+/etc/init.d/dropbear start
+/usr/bin/mphelper tone /usr/share/sound/wakeup.wav

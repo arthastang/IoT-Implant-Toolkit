@@ -1,0 +1,52 @@
+#!/bin/sh
+
+LOG_SIZE=$((3*1024*1024))
+TMP_LOG_SIZE=$((8*1024))  # 8M
+# how many compressed generations to keep
+LOGGEN=9
+TMP_LOG=/var/log/messages
+LOG=/data/log/messages
+
+rotate_exist_log() {
+    i=$LOGGEN
+    rm $LOG.$i.gz 2>/dev/null
+    while [ $i -gt 0 ]; do
+	# rotate one step
+	newer=$(($i-1))
+	# check if we need to compress
+	if [ -f $LOG.$newer.gz ]; then
+		# already compressed - just rotate
+		mv $LOG.$newer.gz $LOG.$i.gz
+	elif [ -f $LOG.$newer ]; then
+		# need to compress
+		mv $LOG.$newer $LOG.$i
+		gzip $LOG.$i
+	fi
+	# next do the previous generation
+	i=$(($i-1))
+    done
+}
+
+rotate_memory_log() {
+    gzip -c $TMP_LOG > $LOG.0.gz
+    echo "" > $TMP_LOG
+}
+
+do_rotate() {
+    rotate_exist_log
+    rotate_memory_log
+    logger -t logcut -p 1 "Rotate syslog"
+}
+
+mkdir -p /data/log
+case "$1" in
+    size)
+	sz=$(du -k "$TMP_LOG" | cut -f 1)
+	if [ $sz -gt $TMP_LOG_SIZE ]; then
+	    do_rotate
+	fi
+    ;;
+    *)
+	do_rotate
+    ;;
+esac

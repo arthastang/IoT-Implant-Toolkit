@@ -1,0 +1,8 @@
+Package: libmieqdrc
+Version: 0.0.1-1
+Depends: libc, alsa-lib
+Source: /home/jenkins/mico/mi/libmieqdrc
+Section: libs
+Architecture: sunxi
+Installed-Size: 8303
+Description:  An ALSA plug of EQ & DRC for LX01 project. The origial code is from Wang Zhao. The parameter is tuned by Wang Fuyu.

@@ -1,0 +1,4 @@
+/bin/adb_shell
+/etc/init.d/adbd
+/bin/adbd
+/etc/adb_profile

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+conf="/data/status/experience_plan"
+
+case "$1" in
+    "get")
+	if [ -f $conf ]; then
+	    level=`cat $conf`
+	else
+	    level="false"
+	fi
+	echo "{\"enable\":\"$level\"}"
+	;;
+    true|false)
+        mkdir -p `dirname $conf`
+	echo "$1" > $conf
+	;;
+    list)
+	echo "{\"enable\":[\"true\",\"false\"]}"
+	;;
+    *)
+	echo "$0 [ture|false|get|list]"
+	;;
+esac

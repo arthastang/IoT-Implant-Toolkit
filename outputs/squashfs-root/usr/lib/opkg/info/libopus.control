@@ -1,0 +1,13 @@
+Package: libopus
+Version: 1.1.3-2
+Depends: libc
+Source: package/libs/opus
+License: BSD-3-Clause
+LicenseFiles: COPYING
+Section: libs
+Maintainer: Nicolas Thill <nico@openwrt.org>
+Architecture: sunxi
+Installed-Size: 146624
+Description:  Opus is a totally open, royalty-free, highly versatile audio codec. Opus is
+ unmatched for interactive speech and music transmission over the Internet, but
+ is also intended for storage and streaming applications.

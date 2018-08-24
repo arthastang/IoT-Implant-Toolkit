@@ -1,0 +1,8 @@
+Package: memtester
+Version: 4.1.3-1
+Depends: libc
+Source: package/utils/memtester
+Section: utils
+Architecture: sunxi
+Installed-Size: 5338
+Description:  A userspace utility for testing the memory subsystem for faults.

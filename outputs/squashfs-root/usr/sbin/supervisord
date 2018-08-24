@@ -1,0 +1,147 @@
+#!/bin/sh
+export LANG=C
+
+/usr/bin/logger -t "taskmonitorTool" "PROCLINE: [ $PROCLINE ] PROCFLAG: [ $PROCFLAG ] [ $1 ]"
+
+if [ -n "$PROCLINE" ]
+	then
+	MONNAME=`echo $PROCLINE| sed -r 's/[^ ]*\/([^\/. ]+)([^ ])?*.*$/\1/g'`
+fi
+
+if [ -z "$PROCLINE" ]
+    then
+    /usr/bin/logger -t "taskmonitorTool" "missing parameter PROCFLAG or PROCLINE ,action:[ $1 ]"
+    exit 1
+fi
+
+taskmonitor()
+ {
+	ret=1;
+	if [ -n "$OOM_FLAG" ]
+	then
+		OOM=$OOM_FLAG
+	else
+		OOM=1
+	fi
+
+	if [ -n "$RSS_FLAG" ]
+	then
+		RSS=$RSS_FLAG
+	else
+		RSS=-1
+	fi
+
+	if [ -n "$VMZ_FLAG" ]
+	then
+		VMZ=$VMZ_FLAG
+	else
+		VMZ=-1
+	fi
+
+	if [ -n "$VMZ_DATA" ]
+	then
+		VMZDATA=$VMZ_DATA
+	else
+		VMZDATA=-1
+	fi
+
+	if [ -n "$PROC_EXT_LIB_PATH" ]
+	then
+		EXT_LIB_PATH=$PROC_EXT_LIB_PATH
+	else
+		EXT_LIB_PATH="none"
+	fi
+
+        if [ -n "$PROC_USE_CGROUP_PATH" ]
+        then
+                USE_CGROUP_PATH=$PROC_USE_CGROUP_PATH
+        else
+                USE_CGROUP_PATH="none"
+        fi
+
+	if [ -n "$PROC_CHANGE_DIR_PATH" ]
+	then
+		WORK_DIR_PATH=$PROC_CHANGE_DIR_PATH
+	else
+		WORK_DIR_PATH="none"
+	fi
+
+	if [ -n "$PROC_DEBUG_FLAG" ]
+	then
+		DEBUG_FLAG=$PROC_DEBUG_FLAG
+	else
+		DEBUG_FLAG="off"
+	fi
+
+	if [ -n "$PROC_FAST_REBOOT" ]
+	then
+		FAST_REBOOT_FLAG=$PROC_FAST_REBOOT
+	else
+		FAST_REBOOT_FLAG=0
+	fi
+
+    if [ -n "$PROC_CHECK_BIN_PATH" ]
+	then
+		CHECK_BIN_FLAG=$PROC_CHECK_BIN_PATH
+	else
+		CHECK_BIN_FLAG=0
+    fi
+
+	if [ -n "$PROCLINE" -a -n "$PROCFLAG" ]
+    	then
+    	if [ -n "$PROCNUM" ]
+        	then
+                        /usr/sbin/taskmonitorTool -p "$PROCLINE" -b "$PROCFLAG" -i "$MONNAME" -n $PROCNUM -t $1 -C $CHECK_BIN_FLAG -M $OOM -r $RSS -L $EXT_LIB_PATH -D $WORK_DIR_PATH -g $USE_CGROUP_PATH -d $DEBUG_FLAG -v ${VMZ} --vmzdata ${VMZDATA} --fastreboot ${FAST_REBOOT_FLAG}
+			ret=$?;
+   		else
+                        /usr/sbin/taskmonitorTool -p "$PROCLINE" -b "$PROCFLAG" -i "$MONNAME" -t $1 -C $CHECK_BIN_FLAG -M $OOM -r $RSS -L $EXT_LIB_PATH -D $WORK_DIR_PATH -g $USE_CGROUP_PATH -d $DEBUG_FLAG -v ${VMZ} --vmzdata ${VMZDATA} --fastreboot ${FAST_REBOOT_FLAG}
+    		ret=$?;
+		fi  
+	fi
+
+	if [ -n "$PROCLINE" -a -z "$PROCFLAG" ]
+    	then
+    	if [ -n "$PROCNUM" ]
+        	then        
+                        /usr/sbin/taskmonitorTool -p "$PROCLINE" -b "$PROCLINE" -i "$MONNAME" -n $PROCNUM -t $1 -C $CHECK_BIN_FLAG -M $OOM -r $RSS -L $EXT_LIB_PATH -D $WORK_DIR_PATH -g $USE_CGROUP_PATH -d $DEBUG_FLAG -v ${VMZ} --vmzdata ${VMZDATA} --fastreboot ${FAST_REBOOT_FLAG}
+    		ret=$?;
+		else
+                        /usr/sbin/taskmonitorTool -p "$PROCLINE" -b "$PROCLINE" -i "$MONNAME" -t $1 -C $CHECK_BIN_FLAG -M $OOM -r $RSS -L $EXT_LIB_PATH -D $WORK_DIR_PATH -g $USE_CGROUP_PATH -d $DEBUG_FLAG -v ${VMZ} --vmzdata ${VMZDATA} --fastreboot ${FAST_REBOOT_FLAG}
+    		ret=$?;
+		fi  
+    fi
+
+	return $ret;
+}
+
+case $1 in
+	"start")
+		t1=`date +%s`
+		taskmonitor start;
+		t2=`date +%s`
+		t3=`expr $t2 - $t1`
+		/usr/bin/logger -t "taskmonitor" "task $MONNAME start used $t3 s"
+		exit $?;
+		;;
+	"stop")
+		t1=`date +%s`
+		taskmonitor stop;
+		t2=`date +%s`
+		t3=`expr $t2 - $t1`
+		/usr/bin/logger -t "taskmonitor" "task $MONNAME stop used $t3 s"
+		exit $?;
+		;;
+	"restart")
+		taskmonitor stop;
+		taskmonitor start;
+		exit $?;
+		;;
+	"status")
+		taskmonitor status;
+		exit $?;
+		;;
+	*)
+		echo "supervisrod $1 { start | stop | restart | status }"
+		exit 1;
+		;;
+esac

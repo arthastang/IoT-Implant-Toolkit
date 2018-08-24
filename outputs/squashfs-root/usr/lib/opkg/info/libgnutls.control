@@ -1,0 +1,16 @@
+Package: libgnutls
+Version: 3.4.11-1
+Depends: libc, libnettle, libgmp
+Source: package/libs/gnutls
+License: LGPLv2.1+
+Section: libs
+Maintainer: Nikos Mavrogiannopoulos <nmav@gnutls.org>
+Architecture: sunxi
+Installed-Size: 365201
+Description:  GnuTLS is a secure communications library implementing the SSL, TLS
+ and DTLS protocols and technologies around them. It provides a simple
+ C language application programming interface (API) to access the secure
+ communications protocols as well as APIs to parse and write X.509, PKCS12,
+ OpenPGP and other required structures. It is aimed to be portable and
+ efficient with focus on security and interoperability.
+ This package contains the GnuTLS shared library, needed by other programs.

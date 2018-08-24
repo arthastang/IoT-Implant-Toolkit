@@ -1,0 +1,7 @@
+/usr/sbin/swapon
+/lib/libblkid-tiny.so
+/usr/sbin/swapoff
+/etc/uci-defaults/10-fstab
+/etc/hotplug.d/block/10-mount
+/etc/init.d/fstab
+/sbin/block

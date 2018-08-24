@@ -1,0 +1,8 @@
+Package: mico-miio
+Version: 0.0.1
+Depends: libc, libjson-c, libubus, libblobmsg-json, libubox, libuci
+Source: /home/jenkins/mico/mi/mico-miio
+Section: xiaomi
+Architecture: sunxi
+Installed-Size: 53530
+Description:  MIIO OT client binary files

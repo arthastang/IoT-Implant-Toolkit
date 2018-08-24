@@ -1,0 +1,9 @@
+/lib/modules/3.4.39/xt_limit.ko
+/lib/modules/3.4.39/xt_LOG.ko
+/lib/modules/3.4.39/xt_mark.ko
+/lib/modules/3.4.39/xt_mac.ko
+/lib/modules/3.4.39/xt_multiport.ko
+/lib/modules/3.4.39/xt_time.ko
+/etc/modules.d/ipt-core
+/lib/modules/3.4.39/xt_TCPMSS.ko
+/lib/modules/3.4.39/xt_comment.ko

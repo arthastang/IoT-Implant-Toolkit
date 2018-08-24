@@ -1,0 +1,9 @@
+Package: ca-certificates
+Version: 20160104
+Depends: libc
+Source: package/system/ca-certificates
+Section: base
+Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Architecture: all
+Installed-Size: 167085
+Description:  System CA certificates

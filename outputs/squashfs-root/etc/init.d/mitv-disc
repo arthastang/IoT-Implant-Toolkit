@@ -1,0 +1,26 @@
+#!/bin/sh /etc/rc.common
+
+START=76
+
+USE_PROCD=1
+DEBUG=0
+
+start_service() {
+  channel=`/sbin/uci -q get /usr/share/mico/version.version.CHANNEL`
+  if [ "$channel" = "release" ]; then
+     /etc/init.d/pns mitv_off 1>/dev/null 2>&1
+     #return
+  fi
+  procd_open_instance
+  procd_set_param command /usr/bin/upnp-disc
+  procd_set_param respawn
+  procd_append_param respawn 3600
+  procd_append_param respawn 5
+  procd_append_param respawn 5
+  procd_close_instance
+}
+
+stop_service() {
+  killall -9 upnp-disc 1>/dev/null 2>&1
+}
+

@@ -1,0 +1,8 @@
+Package: mitv-agent
+Version: 0.0.1
+Depends: libc, libjson-c, libubus, libblobmsg-json, libubox, libcurl, libpolarssl
+Source: /home/jenkins/mico/mi/mitv-agent
+Section: xiaomi
+Architecture: sunxi
+Installed-Size: 4657
+Description:  An service send voice command to mitv

@@ -1,0 +1,7 @@
+#!/bin/sh
+rm ${IPKG_INSTROOT}/usr/bin/wget
+[ -x ${IPKG_INSTROOT}/usr/bin/wget-nossl ] && ln -s ./wget-nossl ${IPKG_INSTROOT}/usr/bin/wget || {
+  ln -s ../../bin/busybox ${IPKG_INSTROOT}/usr/bin/wget
+  ${IPKG_INSTROOT}/usr/bin/wget 2>&1 | grep 'applet not found' > /dev/null 2>&1 && rm ${IPKG_INSTROOT}/usr/bin/wget
+}
+exit 0

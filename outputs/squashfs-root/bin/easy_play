@@ -1,0 +1,12 @@
+#!/bin/sh
+SND="$1"
+VOL="$2"
+if [ -n "$VOL" ]; then
+    vol=`amixer sget mysoftvol | grep 'Front Left:' | cut -d' ' -f5`
+    amixer sset mysoftvol "$VOL"
+fi
+
+aplay "$SND" > /dev/null
+
+[ -n "$vol" ] && amixer sset mysoftvol "$vol"
+

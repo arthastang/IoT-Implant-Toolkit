@@ -1,0 +1,4 @@
+/usr/include/OTA_BurnBoot.h
+/usr/lib/libota-burnboot.so
+/usr/bin/ota-burnboot0
+/usr/bin/ota-burnuboot

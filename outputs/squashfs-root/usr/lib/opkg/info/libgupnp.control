@@ -1,0 +1,11 @@
+Package: libgupnp
+Version: 1.0.2-1
+Depends: libc, libgssdp, libuuid
+Source: /home/jenkins/mico/mi/gupnp
+Section: libs
+Architecture: sunxi
+Installed-Size: 65802
+Description:  GUPnP is a library for implementing both UPnP clients and services in C, using
+ GObject and LibSoup. It allows for fully asynchronous use without using threads
+ and so cleanly integrates naturally into main-loop based applications, and
+ supports all of the UPnP features.

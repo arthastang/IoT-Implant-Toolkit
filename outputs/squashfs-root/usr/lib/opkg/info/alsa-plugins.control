@@ -1,0 +1,9 @@
+Package: alsa-plugins
+Version: 1.1.1-2
+Depends: libc, alsa-lib, libpthread, libspeexdsp
+Source: package/libs/alsa-plugins
+Section: utils
+Maintainer: Ted Hess <thess@kitschensync.net>
+Architecture: sunxi
+Installed-Size: 7841
+Description:  ALSA (Advanced Linux Sound Architecture) plugins

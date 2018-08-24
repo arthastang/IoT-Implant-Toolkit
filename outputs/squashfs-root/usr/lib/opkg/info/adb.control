@@ -1,0 +1,8 @@
+Package: adb
+Version: 0.0.1-1
+Depends: libc, liballwinner-base
+Source: package/utils/adb
+Section: utils
+Architecture: sunxi
+Installed-Size: 43706
+Description:  it comes form Android 4.2!!

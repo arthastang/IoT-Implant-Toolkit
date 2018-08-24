@@ -1,0 +1,12 @@
+/usr/share/alsa/init/ca0106
+/usr/bin/amixer
+/usr/share/alsa/init/test
+/usr/share/alsa/init/info
+/usr/share/alsa/init/hda
+/usr/bin/alsamixer
+/usr/share/alsa/init/default
+/usr/bin/arecord
+/usr/share/alsa/init/00main
+/usr/share/alsa/init/help
+/usr/bin/aplay
+/usr/sbin/alsactl

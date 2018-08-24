@@ -1,0 +1,8 @@
+Package: mico-misc
+Version: 0.1.1-1
+Depends: libc, libuci, libjson-c, libpolarssl, htpdate, libcurl, liblua, libubox, libubus, alsa-lib
+Source: /home/jenkins/mico/mi/mico-misc
+Section: xiaomi
+Architecture: sunxi
+Installed-Size: 2650013
+Description:  Misc app and scripts for mico, like ntp, log, etc.

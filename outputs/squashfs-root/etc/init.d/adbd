@@ -1,0 +1,33 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006-2011 OpenWrt.org
+
+START=50
+STOP=99
+
+USE_PROCD=1
+PROG=/bin/adbd
+OOM_ADJ=-17
+
+start_service() {
+	channel=`/sbin/uci -q get /usr/share/mico/version.version.CHANNEL`
+	if [ "$channel" = "release" ]; then
+		return 0
+	fi
+
+	[ -e /sys/class/android_usb/android0 ] && {
+        	echo 0 > /sys/class/android_usb/android0/enable
+        	echo 18d1 > /sys/class/android_usb/android0/idVendor
+        	echo D002 > /sys/class/android_usb/android0/idProduct
+        	echo adb > /sys/class/android_usb/android0/functions
+        	echo 1 > /sys/class/android_usb/android0/enable
+	}
+	
+	procd_open_instance
+	procd_set_param oom_adj $OOM_ADJ
+	procd_set_param command $PROG -D
+	procd_close_instance
+}
+
+shutdown() {
+	echo shutdown
+}

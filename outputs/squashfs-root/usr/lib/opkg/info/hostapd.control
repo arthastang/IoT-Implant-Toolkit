@@ -1,0 +1,12 @@
+Package: hostapd
+Version: 2016-01-15-2
+Depends: libc, libnl-tiny, hostapd-common, libubus
+Conflicts: wpad, wpad-mini, wpad-mesh
+Source: package/network/services/hostapd
+License: BSD-3-Clause
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: sunxi
+Installed-Size: 278480
+Description:  This package contains a full featured IEEE 802.1x/WPA/EAP/RADIUS
+ Authenticator.

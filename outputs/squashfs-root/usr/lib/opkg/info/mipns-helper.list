@@ -1,0 +1,3 @@
+/usr/bin/pns_ubus_helper
+/etc/init.d/pns_ubus_helper
+/usr/bin/pns_upload_helper

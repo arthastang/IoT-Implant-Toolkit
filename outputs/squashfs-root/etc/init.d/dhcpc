@@ -1,0 +1,28 @@
+#!/bin/sh /etc/rc.common
+
+START=59
+
+USE_PROCD=1
+MICO_SYSLOG_BINDDEVICE="[MICOREGISTER]"
+
+mico_log() {
+    logger -t wireless -p 3 "${MICO_SYSLOG_BINDDEVICE} $*"
+}
+
+
+start_service() {
+  hostname="MiAiSoundbox"
+  procd_open_instance
+  procd_set_param command udhcpc -f -s /bin/simple_dhcp.sh -R -t 0 -i wlan0 -H "$hostname"
+  procd_set_param respawn
+  procd_append_param respawn 3600
+  procd_append_param respawn 5
+  procd_append_param respawn 5
+  procd_close_instance
+}
+
+restart() {
+  rm "/data/status/dhcp_done" >/dev/null 2>&1
+  stop
+  start
+}
