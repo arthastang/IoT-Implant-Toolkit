@@ -74,4 +74,11 @@ Name | Description |
 :---------: | :---------:|
 Soldering Iron | - |
 Solder wire | - |
+Hot Air Gun | - |
+Solder Paste | - |
+Solder Wick | - |
+Hot Air Gun | - |
+Reballing Tool | - |
+usb to ttl | - |
+Dupont Line | - |
 ... | ... |
