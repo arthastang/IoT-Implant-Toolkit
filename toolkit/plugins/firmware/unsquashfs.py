@@ -3,7 +3,7 @@
 unsquashfs class defination
 '''
 import os
-from toolkit.core.common.basic import Plugin
+from toolkit.core.basic import Plugin
 
 
 class UnSquashfs(Plugin):

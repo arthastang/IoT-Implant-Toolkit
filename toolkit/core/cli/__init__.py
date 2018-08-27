@@ -6,7 +6,7 @@ from cmd2 import Cmd, with_argument_list
 from toolkit.plugins.firmware.mksquashfs import MkSquashfs
 from toolkit.plugins.firmware.unsquashfs import UnSquashfs
 from toolkit.plugins.firmware.mkbootimg import MkBootimg
-#from toolkit.core.common.toollist import ToolList
+#from toolkit.core.toollist import ToolList
 
 class Cli(Cmd):
     '''

@@ -6,7 +6,7 @@ main procedure
 
 import sys
 #from toolkit import Toolkit
-from toolkit.core.common.cli import Cli
+from toolkit.core.cli import Cli
 
 class ToolkitCli():
     '''
