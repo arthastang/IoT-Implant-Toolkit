@@ -72,13 +72,11 @@ Essential hardware tools for malware implantation research.See pictures in Hardw
 
 Name | Description |
 :---------: | :---------:|
-Soldering Iron | - |
-Solder wire | - |
-Hot Air Gun | - |
-Solder Paste | - |
-Solder Wick | - |
-Hot Air Gun | - |
-Reballing Tool | - |
-usb to ttl | - |
-Dupont Line | - |
-... | ... |
+Soldering Iron | Solder tools |
+Solder Wire | Solder tools |
+Solder Paste | Solder tools |
+Solder Wick | Solder tools |
+Hot Air Gun | Solder tools |
+Reballing Tool | Reballing tool |
+usb to ttl | Debug / Console cable |
+Dupont Wire | Electrical wire |
