@@ -1,8 +1,0 @@
-Package: nano-httpd
-Version: 0.0.1
-Depends: libc, libubox
-Source: /home/jenkins/mico/mi/nano-httpd
-Section: xiaomi
-Architecture: sunxi
-Installed-Size: 4449
-Description:  mico nano httpd

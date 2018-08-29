@@ -1,8 +1,0 @@
-Package: mtd-utils
-Version: 1.5.2-2
-Depends: libc
-Source: package/utils/mtd-utils
-Section: utils
-Architecture: sunxi
-Installed-Size: 104
-Description:  Utilities for manipulating memory technology devices.

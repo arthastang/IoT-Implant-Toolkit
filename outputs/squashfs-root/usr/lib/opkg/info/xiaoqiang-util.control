@@ -1,8 +1,0 @@
-Package: xiaoqiang-util
-Version: 1-1.1
-Depends: libc, libopenssl
-Source: package/utils/xiaoqiang-util
-Section: net
-Architecture: sunxi
-Installed-Size: 9525
-Description:  XiaoQiang Utilities

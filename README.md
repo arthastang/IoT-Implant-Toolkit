@@ -40,7 +40,7 @@ $ python3 setup.py install
 ```
 Run the toolkit:
 ```bash
-$ python3 IoT-Implant-Toolkit.py
+$ python3 -B IoT-Implant-Toolkit.py
  _____   _______   _____                 _             _       _______          _ _    _ _   
 |_   _| |__   __| |_   _|               | |           | |     |__   __|        | | |  (_) |  
   | |  ___ | |______| |  _ __ ___  _ __ | | __ _ _ __ | |_ ______| | ___   ___ | | | ___| |_ 

@@ -1,9 +1,0 @@
-Package: libeventlog
-Version: 0.2.9-2
-Depends: libc
-Source: package/libs/eventlog
-Section: libs
-Maintainer: W. Michael Petullo <mike@flyn.org>
-Architecture: sunxi
-Installed-Size: 5695
-Description:  A new API to format and send structured log messages.

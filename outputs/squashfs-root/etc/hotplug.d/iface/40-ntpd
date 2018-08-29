@@ -1,9 +1,0 @@
-#!/bin/sh
-
-logger -p notice -t "hotplug.d" "ntpd: run because of $INTERFACE $ACTION"
-
-[ "$ACTION" = "ifup" ] || exit 0
-
-if [ "$INTERFACE" = "wan" -o "$INTERFACE" = "lan" ]; then
-   #/bin/ntpsetclock post once >/dev/null 2>&1 &
-fi

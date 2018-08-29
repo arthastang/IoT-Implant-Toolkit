@@ -1,8 +1,0 @@
-Package: quickplayer
-Version: 0.0.1
-Depends: libc, libubox, libubus, alsa-lib, libsndfile
-Source: /home/jenkins/mico/mi/quickplayer
-Section: xiaomi
-Architecture: sunxi
-Installed-Size: 3371
-Description:  quick player service

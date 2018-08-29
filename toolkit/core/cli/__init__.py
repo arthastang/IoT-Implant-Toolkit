@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 
+import inspect
 import argparse
-#import pkgutil
+import importlib
 from cmd2 import Cmd, with_argument_list
-from toolkit.plugins.firmware.mksquashfs import MkSquashfs
-from toolkit.plugins.firmware.unsquashfs import UnSquashfs
-from toolkit.plugins.firmware.mkbootimg import MkBootimg
-#from toolkit.core.toollist import ToolList
+from toolkit.core.toollist import ToolList
 
 class Cli(Cmd):
     '''
@@ -24,7 +22,8 @@ class Cli(Cmd):
         super().__init__()
         #self.del_defaultcmds()
 
-        self.toollist = toollist
+        self.toollist = {}
+
         self.runtool = argparse.ArgumentParser(prog="run", description="Exec a plugin")
         self.runtool.add_argument("pluginname", help="name of the plugin")
 
@@ -32,11 +31,13 @@ class Cli(Cmd):
         '''
         List the tools avaliable
         '''
+        tlist = ToolList()
+        self.toollist = tlist.tooltable
         print("{:<20} {:<30} {}".format("PLUGINS", "CATEGORY", "DESCRIPTIONS"))
         print("{:<20} {:<30} {}\n".format("*******", "********", "************"))
 
-        for eachtool in self.toollist:
-            print("{:<20} {:<30} {}".format(eachtool, self.toollist[eachtool][1], self.toollist[eachtool][2]))
+        for eachtool in self.toollist.keys():
+            print("{:<20} {:<30} {}".format(eachtool, self.toollist[eachtool]['category'], self.toollist[eachtool]['description']))
         print()
 
     @with_argument_list
@@ -51,17 +52,17 @@ class Cli(Cmd):
 
         toolname, toolarg = self.runtool.parse_known_args(arglist)
 
-        pluginnam = toolname.pluginname
+        plugin_name = toolname.pluginname
 
-        print("Run plugin:{} with arguments:{}".format(pluginnam, str(toolarg)))
+        print("Run plugin:{} with arguments:{}".format(plugin_name, str(toolarg)))
 
-        if pluginnam in self.toollist.keys():
-            #print(pluginnam)
+        if plugin_name in self.toollist.keys():
             #get the class name from toollist dict
-            toolobj = globals()[self.toollist[pluginnam][0]]
-            #print(toolobj)
-            toolinstance = toolobj()
-            toolinstance.run(toolarg)
+            import_mod = importlib.import_module(self.toollist[plugin_name]['modulepath'])
+            for tname, obj in inspect.getmembers(import_mod):
+                if inspect.isclass(obj) and tname == self.toollist[plugin_name]['classname']:
+                    tool_ins = obj()
+                    tool_ins.run(toolarg)
         else:
             print("Plugin not found.")
 

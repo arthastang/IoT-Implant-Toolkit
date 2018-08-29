@@ -1,6 +1,0 @@
-/sbin/mount_root
-/sbin/jffs2reset
-/sbin/snapshot_tool
-/sbin/jffs2mark
-/lib/libfstools.so
-/sbin/snapshot

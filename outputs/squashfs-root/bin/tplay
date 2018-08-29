@@ -1,4 +1,0 @@
-#!/bin/sh
-
-ubus call mediaplayer player_play_operation {\"action\":\"pause\"}
-aplay -t raw -c 1 -f S16_LE -r 16000 "$1"

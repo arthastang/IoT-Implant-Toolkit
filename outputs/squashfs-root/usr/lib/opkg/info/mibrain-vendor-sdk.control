@@ -1,8 +1,0 @@
-Package: mibrain-vendor-sdk
-Version: 0.0.1
-Depends: libc, mibrain, mibrain-service, libjson-c, libubus, libblobmsg-json, libubox
-Source: /home/jenkins/mico/mi/mibrain-vendor-sdk
-Section: xiaomi
-Architecture: sunxi
-Installed-Size: 33774
-Description:  xiaomi brain sdk for vendor

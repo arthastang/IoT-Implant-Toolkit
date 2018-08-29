@@ -1,6 +1,0 @@
-*/30 * * * * /usr/sbin/easy_logcut size
-* * * * * /usr/sbin/network_probe.sh
-32 4 * * * /usr/sbin/pns refresh
-*/10 * * * * /usr/bin/check_mediaplayer_status
-* 3 * * * /bin/ota slient  # check ota
-*/1 * * * * /bin/spy.sh

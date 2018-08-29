@@ -1,9 +1,0 @@
-#!/bin/sh /etc/rc.common
-# Copyright (C) 2006 OpenWrt.org
-
-START=11
-start() {
-	for CONF in /etc/sysctl.conf /etc/sysctl.d/*.conf; do
-		[ -f "$CONF" ] && sysctl -p "$CONF" -e >&-
-	done
-}

@@ -1,22 +1,23 @@
 #!/usr/bin/python3
 '''
-mksquashfs class defination
+spyclient class defination
+not finish yet
 '''
 import os
 from toolkit.core.basic import Plugin
 
 
-class MkSquashfs(Plugin):
+class SpyClient(Plugin):
     '''
     inherit from class Plugin
     '''
     def __init__(self):
-        super().__init__(name = "mksquashfs",
-                         description = "pack&unpack for squashfs filesystem",
-                         classname = "MkSquashfs",
-                         author = "Plougher",
-                         ref = "https://github.com/plougher/squashfs-tools",
-                         category = "Firmware Pack&Unpack",
+        super().__init__(name = "spyclient",
+                         description = "stable spy client for malware implantation",
+                         classname = "SpyClient",
+                         author = "MarvelTeam",
+                         ref = "https://github.com/arthtang/IoT-Implant-Toolkit",
+                         category = "Binary implantation",
                          usage = 'Run "run mksquashfs" will compress outputs/squashfs-root/ to new.squashfs .Run "run mksquashfs help" to see more parameters.')
 
         self.argparser.add_argument("--input", default="./outputs/squashfs-root/", help="squashfs dir")

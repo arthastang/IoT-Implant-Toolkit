@@ -1,8 +1,0 @@
-Package: iozone3
-Version: 444-1
-Depends: libc
-Source: package/utils/iozone
-Section: utils
-Architecture: sunxi
-Installed-Size: 109650
-Description:  iozone is a tool to test filesystem performance

@@ -1,21 +1,22 @@
 #!/usr/bin/python3
 '''
-mksquashfs class defination
+mkcramfs class defination
+not finish yet
 '''
 import os
 from toolkit.core.basic import Plugin
 
 
-class MkSquashfs(Plugin):
+class MkCramfs(Plugin):
     '''
     inherit from class Plugin
     '''
     def __init__(self):
-        super().__init__(name = "mksquashfs",
-                         description = "pack&unpack for squashfs filesystem",
-                         classname = "MkSquashfs",
-                         author = "Plougher",
-                         ref = "https://github.com/plougher/squashfs-tools",
+        super().__init__(name = "mkcramfs",
+                         description = "pack&unpack for cramfs filesystem",
+                         classname = "MkCramfs",
+                         author = " ",
+                         ref = "https://sourceforge.net/projects/cramfs/files/cramfs/1.1",
                          category = "Firmware Pack&Unpack",
                          usage = 'Run "run mksquashfs" will compress outputs/squashfs-root/ to new.squashfs .Run "run mksquashfs help" to see more parameters.')
 

@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 '''
-odex2jar class defination
+crosscompile class defination
+not finish yet
 '''
 import os
 from toolkit.core.basic import Plugin
 
 
-class Odex2Jar(Plugin):
+class CrossComplie(Plugin):
     '''
     inherit from class Plugin
     '''
     def __init__(self):
-        super().__init__(name = "odex2jar",
-                         description = "odex to jar for Android",
-                         classname = "Odex2Jar",
+        super().__init__(name = "crosscomplie",
+                         description = "Crosscomplie toolchain for ARMv7",
+                         classname = "CrossComplie",
                          author = "Marvel Team",
                          ref = "https://github.com/arthastang/IoT-Implant-Toolkit",
                          category = "Software Analysis",

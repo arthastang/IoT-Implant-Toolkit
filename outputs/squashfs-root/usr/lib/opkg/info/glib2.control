@@ -1,9 +1,0 @@
-Package: glib2
-Version: 2.55.0-1
-Depends: libc, zlib, libpthread, libffi, libattr
-Source: package/libs/glib2
-Section: libs
-Maintainer: Peter Wagner <tripolar@gmx.at>
-Architecture: sunxi
-Installed-Size: 906615
-Description:  The GLib library of C routines

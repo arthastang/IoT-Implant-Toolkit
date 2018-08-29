@@ -1,6 +1,0 @@
-DISTRIB_ID='tina.jenkins.20180409.060211'
-DISTRIB_RELEASE='Neptune'
-DISTRIB_REVISION='91'
-DISTRIB_TARGET='astar-parrot/generic v2.2'
-DISTRIB_DESCRIPTION='tina.jenkins.20180409.060211 2.1.2'
-DISTRIB_TAINTS='no-all no-ipv6 busybox'

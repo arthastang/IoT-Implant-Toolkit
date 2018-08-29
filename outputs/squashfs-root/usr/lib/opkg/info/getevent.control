@@ -1,8 +1,0 @@
-Package: getevent
-Version: 1
-Depends: libc
-Source: package/utils/getevent
-Section: utils
-Architecture: sunxi
-Installed-Size: 11380
-Description:  getevent for Android Toolbox

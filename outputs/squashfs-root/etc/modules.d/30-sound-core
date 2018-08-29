@@ -1,8 +1,0 @@
-soundcore
-snd
-snd-seq-device
-snd-timer
-snd-pcm
-snd-mixer-oss
-snd-pcm-oss
-snd-compress

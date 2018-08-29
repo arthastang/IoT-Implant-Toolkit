@@ -1,9 +1,0 @@
-Package: ap6212-firmware
-Version: 1
-Depends: libc
-Source: package/firmware/linux-firmware
-Section: firmware
-Maintainer: Trace Wong
-Architecture: sunxi
-Installed-Size: 590131
-Description:  Broadcom AP6212 firmware

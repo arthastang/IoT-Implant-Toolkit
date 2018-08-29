@@ -1,8 +1,0 @@
-Package: upnp-disc
-Version: 1
-Depends: libc, glib2, libubox, libubus, libjson-c, libgssdp, libgupnp, libcurl
-Source: /home/jenkins/mico/mi/upnp-disc
-Section: xiaomi
-Architecture: sunxi
-Installed-Size: 9864
-Description:  A tool that enables one to discover UPnP devices and services, retrieve information.

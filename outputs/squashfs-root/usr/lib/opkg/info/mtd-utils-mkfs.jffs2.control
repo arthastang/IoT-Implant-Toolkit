@@ -1,8 +1,0 @@
-Package: mtd-utils-mkfs.jffs2
-Version: 1.5.2-2
-Depends: libc, mtd-utils, zlib
-Source: package/utils/mtd-utils
-Section: utils
-Architecture: sunxi
-Installed-Size: 15480
-Description:  mkfs.jffs2 package from mtd-utils

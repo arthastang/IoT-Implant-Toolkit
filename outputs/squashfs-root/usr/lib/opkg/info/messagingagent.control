@@ -1,8 +1,0 @@
-Package: messagingagent
-Version: 1-1.1
-Depends: libc, zlib, libcurl, libstdcpp, libpthread, librt, libsqlite3, libuuid, libubus, libubox, libblobmsg-json, libjson-c, libpolarssl, libopenssl, libsqlite3, sqlite3-cli, wget, mibrain, rapidjson, libuci
-Source: /home/jenkins/mico/mi/messagingagent
-Section: opt
-Architecture: sunxi
-Installed-Size: 241830
-Description:  messagingagent

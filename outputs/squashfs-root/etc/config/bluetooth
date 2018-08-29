@@ -1,2 +1,0 @@
-config params 'bsa'
-	option device '/dev/ttyS1'

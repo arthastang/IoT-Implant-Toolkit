@@ -1,9 +1,0 @@
-Package: mibrain
-Version: 1
-Depends: libc, libpthread, libstdcpp, libpolarssl, libjson-c
-Source: /home/jenkins/mico/mi/brain
-Section: xiaomi
-Maintainer: liangjinxiang@xiaomi.com
-Architecture: sunxi
-Installed-Size: 145785
-Description:  voice assistant sdk connect to mi brain.

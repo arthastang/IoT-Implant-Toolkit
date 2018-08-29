@@ -1,8 +1,0 @@
-Package: mipns-sai
-Version: 1
-Depends: libc, mipns-general, mibrain, mibrain-vendor-sdk, mibrain-service, glib2, alsa-lib, libubox, libubus, libjson-c
-Source: /home/jenkins/mico/mi/pns-sai
-Section: xiaomi
-Architecture: sunxi
-Installed-Size: 8669808
-Description:  Like PNS(peripheral nervous system) on animal, mipns connect mibarin with its body (frondend SoundAI).
