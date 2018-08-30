@@ -7,7 +7,8 @@ IoT-Implant-Toolkit is a framework of useful tools for malware implantation rese
 In our reasearch, we are able to implant Trojans in devices such as smart speakers, cameras, driving recorders and mobile translators With IoT-Implant-Toolkit.
 
 ## How to use
-###Installation
+
+### Installation
 
 Make sure you have git, python3 and setuptools installed.
 
@@ -72,7 +73,7 @@ Software Analysis | odex unpack | Odex to smali for Android | on our Github |
 Binary implant | spy client&server | a stable spy client and server, source and pre-built bins | on our Github |
 
 
-###Create new plugins
+### Create new plugins
 Code structure:
 
 ```bash
@@ -96,8 +97,10 @@ Create [newplugin].py in corresponding folder(category) and define init attribut
 The framework will detect new plugin automatically when startup.
 
 
-##Other tools
+## Other tools
+
 ### Hardware tools
+
 Essential hardware tools for malware implantation research.See pictures in HardwareTools/ .
 
 Name | Description |
@@ -112,9 +115,11 @@ usb to ttl | Debug / Console cable |
 Dupont Wire | Electrical wire |
 EPROM Burner Programmer | Burner Programmer |
 
-###Other useful software tools:
+### Other useful software tools:
 We have not added more plugins due to time limitation.
+
 Chart below are tools not fits our framework, but may be useful.
+
 We hope that IoT-Implant-Tookit will be an essential toolkit in malware implantation.
 
 Categories | Tools | Descriptions | Reference |
