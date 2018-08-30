@@ -23,6 +23,9 @@ $ cd IoT-Implant-Toolkit/
 $ python3 setup.py install
 
 ```
+
+### Run
+
 Run the toolkit:
 ```bash
 $ python3 -B IoT-Implant-Toolkit.py
@@ -50,6 +53,10 @@ $ python3 -B IoT-Implant-Toolkit.py
 [Implant-Toolkit]>
 
 ```
+Three commands supported：  
+list: list all plugins  
+run: run a specific plugin with "run [plugin] [parameters]"  
+exit: exit  
 
 ## Features
 Each software tool acts as a plugin which can be easily added into the framework.
@@ -93,8 +100,7 @@ Code structure:
 
 ```
 
-Create [newplugin].py in corresponding folder(category) and define init attributes to add a new plugin to IoT-Implant-Toolkit.
-The framework will detect new plugin automatically when startup.
+Create [newplugin].py in corresponding folder(category) and define init attributes to add a new plugin to IoT-Implant-Toolkit.The framework will detect new plugin automatically when startup.
 
 
 ## Other tools
@@ -115,7 +121,7 @@ usb to ttl | Debug / Console cable |
 Dupont Wire | Electrical wire |
 EPROM Burner Programmer | Burner Programmer |
 
-### Other useful software tools:
+### Other useful software tools
 We have not added more plugins due to time limitation.
 
 Chart below are tools not fits our framework, but may be useful.
