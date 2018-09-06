@@ -5,7 +5,7 @@
 # IoT-Implant-Toolkit
 IoT-Implant-Toolkit is a framework of useful tools for malware implantation research of IoT devices. It is a toolkit consisted of essential software tools on firmware modification, serial port debugging, software analysis and stable spy clients. With an easy-to-use and extensible shell-like environment, IoT-Implant-Toolkit is a one-stop-shop toolkit simplifies complex procedure of IoT malware implantation. 
 
-In our reasearch, we have implanted Trojans in devices including smart speakers, cameras, driving recorders and mobile translators with IoT-Implant-Toolkit.   
+In our research, we have succcessfully implanted Trojans in devices including smart speakers, cameras, driving recorders and mobile translators with IoT-Implant-Toolkit.   
 A demo video below: 
 
 [![test video](http://img.youtube.com/vi/CpK1lZJmbJY/0.jpg)](http://www.youtube.com/watch?v=CpK1lZJmbJY "test video")
