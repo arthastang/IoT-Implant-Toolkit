@@ -14,7 +14,12 @@ A demo video below:
 
 ### Installation
 
-Make sure you have git, python3 and setuptools installed.
+Make sure you have git, python3 and setuptools installed.  
+For audio processing and playing, you should install alsa(built-in in linux), sox and ffplay. On ubuntu18.04:
+
+```bash
+$ sudo apt install sox ffmpeg 
+```
 
 Download source code from our Github:
 ```bash
@@ -80,8 +85,10 @@ Firmware Pack&Unpack | mkbootimg_tools | Unpack&repack boot.img for Android | ht
 Firmware Pack&Unpack | cramfs | make cramfs filesystem |  https://sourceforge.net/projects/cramfs/files/cramfs/1.1/ |
 Firmware Pack&Unpack | mountimg | mount&unmount ext4 filesystems for Android system.img&data.img |  On our github |
 Software Analysis | setools-android | setools for Android with sepolicy-inject | https://github.com/xmikos/setools-android |
+Software Analysis | crosscomplie | crosscompile toolchain for arm | on our Github later |
 Software Analysis | odex unpack | Odex to smali for Android | on our Github |
 Binary implant | spy client&server | a stable spy client and server, source and pre-built bins | on our Github |
+Binary implant | denoise tool | denoise tool for audio porcess | on our Github |
 
 
 ### Create new plugins
